@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+
+  resources :categories
+  
+  root 'districts#index'
+
+  get 'spaces/new'
+
+  get 'spaces/show'
+
+  get 'spaces/edit'
+
+  match '/help',    to: 'pages#help',     via: :get
+  match '/scams',   to: 'pages#scams',    via: :get
+  match '/safety',  to: 'pages#safety',   via: :get
+  match '/terms',   to: 'pages#terms',    via: :get
+  match '/privacy', to: 'pages#privacy',  via: :get
+  match '/about',   to: 'pages#about',    via: :get
+  match '/contact', to: 'pages#contact',  via: :get
+  match '/wtf', to: 'pages#wtf',  via: :get
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
